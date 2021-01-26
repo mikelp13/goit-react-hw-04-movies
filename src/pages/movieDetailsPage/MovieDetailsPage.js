@@ -15,6 +15,9 @@ const MovieDetailsPage = ({ match, location, history }) => {
 
   useEffect(() => {
     setParams({ ...location.state }); //from, query
+  }, []);
+
+  useEffect(() => {
     setLoading(true);
     moviesAPI
       .getMovieDetails(match.params.movieId)
